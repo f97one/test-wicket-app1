@@ -4,4 +4,5 @@
     <automatic-scaling>
         <min-instances>0</min-instances>
     </automatic-scaling>
+    <sessions-enabled>true</sessions-enabled>
 </appengine-web-app>
