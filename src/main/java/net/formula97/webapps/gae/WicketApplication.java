@@ -2,7 +2,8 @@ package net.formula97.webapps.gae;
 
 import org.apache.wicket.markup.html.WebPage;
 import org.apache.wicket.protocol.http.WebApplication;
-import org.wicketstuff.javaee.injection.JavaEEComponentInjector;
+import org.apache.wicket.spring.injection.annot.SpringComponentInjector;
+import org.springframework.context.annotation.AnnotationConfigApplicationContext;
 
 /**
  * Application object for your web application.
@@ -25,6 +26,11 @@ public class WicketApplication extends WebApplication {
     @Override
     public void init() {
         super.init();
-        getComponentInstantiationListeners().add(new JavaEEComponentInjector(this));
+
+        // Spring Injection
+        AnnotationConfigApplicationContext ctx = new AnnotationConfigApplicationContext();
+        ctx.scan("net.formula97.webapps.gae.ejbBean");
+        ctx.refresh();
+        getComponentInstantiationListeners().add(new SpringComponentInjector(this, ctx));
     }
 }
