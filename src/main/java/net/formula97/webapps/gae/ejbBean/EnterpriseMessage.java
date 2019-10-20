@@ -6,4 +6,5 @@ import javax.annotation.ManagedBean;
 public class EnterpriseMessage {
 
     public String message = "Welcome to the EJB world!";
+    public String versionCode = System.getProperty("java.version");
 }
