@@ -42,7 +42,6 @@
     </licenses>
     <properties>
         <wicket.version>8.6.1</wicket.version>
-<!--        <jetty9.version>9.4.18.v20190429</jetty9.version>-->
         <slf4j.version>1.7.25</slf4j.version>
         <junit.version>4.12</junit.version>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
@@ -68,13 +67,6 @@
             <groupId>org.apache.wicket</groupId>
             <artifactId>wicket-ioc</artifactId>
             <version>${wicket.version}</version>
-        </dependency>
-
-        <!-- LOGGING DEPENDENCIES - SLF4J-SIMPLE -->
-        <dependency>
-            <groupId>org.slf4j</groupId>
-            <artifactId>slf4j-simple</artifactId>
-            <version>${slf4j.version}</version>
         </dependency>
 
         <!--  JUNIT DEPENDENCY FOR TESTING -->
@@ -157,23 +149,6 @@
                     <showDeprecation>true</showDeprecation>
                 </configuration>
             </plugin>
-            <!-- jetty-maven-plugin -->
-<!--            <plugin>-->
-<!--                <groupId>org.eclipse.jetty</groupId>-->
-<!--                <artifactId>jetty-maven-plugin</artifactId>-->
-<!--                <version>${jetty9.version}</version>-->
-<!--                <configuration>-->
-<!--                    <systemProperties>-->
-<!--                        <systemProperty>-->
-<!--                            <name>maven.project.build.directory.test-classes</name>-->
-<!--                            <value>${project.build.directory}/test-classes</value>-->
-<!--                        </systemProperty>-->
-<!--                    </systemProperties>-->
-<!--                    <jettyXml>-->
-<!--                        ${project.basedir}/src/test/jetty/jetty.xml,${project.basedir}/src/test/jetty/jetty-ssl.xml,${project.basedir}/src/test/jetty/jetty-http.xml,${project.basedir}/src/test/jetty/jetty-https.xml-->
-<!--                    </jettyXml>-->
-<!--                </configuration>-->
-<!--            </plugin>-->
             <!-- maven-eclipse-plugin -->
             <plugin>
                 <groupId>org.apache.maven.plugins</groupId>
